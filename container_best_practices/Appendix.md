@@ -1,6 +1,11 @@
 [Back to Summary](README.md)
 
-## Appendix: summary of basic Singularity commands
+## Appendix A: Singularity tutorial
+
+A useful introductory tutorial by the Sylabs team can be found at [https://github.com/ArangoGutierrez/Singularity-tutorial].
+
+
+## Appendix B: summary of basic Singularity commands
 
 1. Pull a container image (saved in current directory or set path, see below):
 ```
