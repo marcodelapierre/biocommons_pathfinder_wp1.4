@@ -1,6 +1,6 @@
 [Back to Summary](README.md)
 
-## Selecting container images for your applications
+## Setting up container images for your applications
 
 
 
