@@ -14,7 +14,7 @@ There are some useful Singularity behaviours that can be configured simply by se
 
 ### Host directory mounting
 
-By default, Singularity only mounts (i.e. makes available) in the container the Host current directory from where the singularity command is issued. This can be limiting every time you need to access files in other directories. You can mount additional directories at runtime with the `-B <dir1>,<dir2>,..` flag, but there's a handy variable for directories that you know you're always going to need.  
+By default, Singularity only mounts (i.e. makes available) in the container the host current directory from where the singularity command is launched. This can be limiting every time you need to access files in other directories. You can mount additional directories at runtime with the `-B <dir1>,<dir2>,..` flag, but there's a handy variable for directories that you know you're always going to need.  
 ```
 export SINGULARITY_BINDPATH=<dir1>,<dir2>,..
 ```
@@ -29,7 +29,10 @@ As a second example, Raijin at NCI has `/short`:
 export SINGULARITY_BINDPATH="/short"
 ```
 
-In Cloud systems, people often set up data volumes, which it can be convenient to mount through this environment variable.
+In Cloud systems, people often set up data volumes by themself, which it can be convenient to mount through this environment variable. As an example, in my cloud instances I typically use the following:
+```
+export SINGULARITY_BINDPATH="/data/work"
+```
 
 
 ### Cache location
@@ -46,7 +49,10 @@ or under `/short` at NCI:
 export SINGULARITY_CACHEDIR="/short/<project>/<user>/.singularity>"
 ```
 
-On the Cloud, depending on how you've setup your virtual machine, you might want to keep on using the default home location, or set a customised one under a different volume. If you have a persistent volume available for data storage, you might want to use that to store image caches as well.
+On the Cloud, depending on how you've setup your virtual machine, you might want to keep on using the default home location, or set a customised one under a different volume. If you have a persistent volume available for data storage, you might want to use that to store image caches as well. This is how I set this up on my cloud, using my data volume:
+```
+export SINGULARITY_CACHEDIR="/data/.singularity>"
+```
 
 
 ### Image store location
@@ -68,7 +74,10 @@ and `/short` at NCI:
 export SINGULARITY_PULLFOLDER="/short/<project>/<user>/.singularity/images"
 ```
 
-On the Cloud, similar to the discussion for cache, you might consider different locations depending on your preferred setup. If you have a persistent volume available for data storage, you might want to use that to store container images as well.
+On the Cloud, similar to the discussion for cache, you might consider different locations depending on your preferred setup. If you have a persistent volume available for data storage, you might want to use that to store container images as well. E.g. here is what I do:
+```
+export SINGULARITY_PULLFOLDER="/data/.singularity/images"
+```
 
 Note that you will need to ensure that the specified location for the image store actually exists (if not, create it with `mkdir` once and for all).
 
