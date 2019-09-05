@@ -1,5 +1,6 @@
 [Back to Summary](README.md)
 
+
 ## Appendix A: Singularity tutorial
 
 A useful introductory tutorial by the Sylabs team can be found at [https://github.com/ArangoGutierrez/Singularity-tutorial].
@@ -50,5 +51,6 @@ or
 ```
 </path/to/image>/ubuntu_18.04.sif
 ```
+
 
 [Back to Summary](README.md)

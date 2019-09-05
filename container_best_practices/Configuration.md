@@ -1,5 +1,12 @@
 [Back to Summary](README.md)
 
+
+## Admin configuration for Singularity
+
+Configurations file for Singularity can be found under `<SINGULARITY_INSTALL_DIR>/etc/singularity/`, i.e. by default `/usr/local/etc/singularity/`. The main configuration file is `singularity.conf`, and most defaults seem to work fine in most cases.  
+The one setting update I recommend for admins is `mount home = no`, so that by default potentially sensitive information in the users homes in not available in containers. Users can still mount their home directory if they want (see directory mounting below).
+
+
 ## User configuration for Singularity
 
 There are some useful Singularity behaviours that can be configured simply by setting environment variables. Note that in HPC centres system administrators might have already taken care of some of these settings.
@@ -106,5 +113,6 @@ Note that you need to ensure the store dir exists:
 ```
 mkdir -p ${MYGROUP}/.singularity/images
 ```
+
 
 [Back to Summary](README.md)

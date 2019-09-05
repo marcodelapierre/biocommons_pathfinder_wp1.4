@@ -14,8 +14,8 @@ I would kindly ask sites with older versions to proceed with an update.
 
 1. [User configuration for Singularity](Configuration.md)
 
-2. [Selecting container images for your applications](SettingUp.md)
+2. [Setting up container images for your applications](SettingUp.md)
 
-3. [Embedding Singularity syntax to run containers (in progress)](Running.md)
+3. [Embedding Singularity syntax to run containers](Running.md)
 
 4. [Appendix: summary of basic Singularity commands](Appendix.md)
