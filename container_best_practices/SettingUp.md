@@ -63,8 +63,9 @@ ubuntu@sha256:d1d454df0f579c6be4d8161d227462d69e163a8ff9d20a847533989cf0c94d90
 ## Building with Docker or Singularity?
 
 This is a legitimate question even if you are using only Singularity to manage and run your containers. In fact, both choices come with pros and cons.  
-Using Singularity provides a consistent user experience across all the steps of container usage. Also, making a Singularity recipe file out of a bash script requires few modifications. Singularity has also a remote build feature, that allows to submit builds from an HPC cluster.  
+Using Singularity provides a consistent user experience across all the steps of container usage. Also, making a Singularity recipe file out of a shell script requires few modifications. Singularity has also a remote build feature, that allows to submit builds from an HPC cluster.  
 On the other hand, Docker build is a multi step process that makes large use of caching to reduce build and development times. Also, Docker containers can be run by both Docker and Singularity.  
+
 At present I have no final answer on which way is the best to go. On a Linux box (laptop, workstation, cloud) they can be installed together to coexist, so you might want to give both a try and find your preferred build approach.
 
 
