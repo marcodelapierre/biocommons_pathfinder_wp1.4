@@ -22,7 +22,7 @@ singularity exec docker://ubuntu:18.04 echo 'hello world'
 
 3. Run default container application, if defined, otherwise open a shell:
 ```
-singularity run://ubuntu:18.04
+singularity run docker://ubuntu:18.04
 ```
 
 4. Open a shell in a container:
@@ -33,7 +33,7 @@ enter `exit` to close.
 
 5. See [Build a Container](https://sylabs.io/guides/3.3/user-guide/build_a_container.html) for details on building containers with Singularity.
 
-If you have already got a local container image, you can use its filename with the keywords `exec`, `run`, `shell`, for instance for executing a command:
+If you have already got a local container image, you can use its filename with the keywords `exec`, `run`, `isntance`, `shell` (points 2-4 above). For instance for `exec`'uting a command:
 ```
 singularity exec </path/to/image>/ubuntu_18.04.sif echo 'hello world'
 ```

@@ -37,8 +37,7 @@ export SINGULARITY_BINDPATH="/data/work"
 
 ## Cache location
 
-When Singularity pulls/builds container images, it needs a cache to store intermediate components. By default, this cache is under the user home directory, `~/.singularity`. In contexts such as HPC centres use of home directories is often discouraged (with strict storage quotas in place), so it can be convenient to redefine this location, pointing to a volume where user quota is larger.
-
+When Singularity pulls/builds container images, it needs a cache to store intermediate components. By default, this cache is under the user home directory, `~/.singularity`. In contexts such as HPC centres use of home directories is often discouraged (with strict storage quotas in place), so it can be convenient to redefine this location, pointing to a volume where user quota is larger.  
 This would be under the `/group` filesystem at Pawsey:
 ```
 export SINGULARITY_CACHEDIR="/group/<project>/<user>/.singularity>"
@@ -62,15 +61,14 @@ When downloading an image right while running it (i.e. via `singularity exec` or
 When downloading through the `singularity pull` command, the image will be stored in the current directory by default.
 
 This latter default can be changed depending on your personal preferences. Having images stored in the current directory is handy to use them, but can result in many duplicates of the same image throughout your directory tree.  
-The alternative is to define a specific, unique location to store images. This keeps things tidy and allows you to always know where to find your downloaded images.
-
+The alternative is to define a specific, unique location to store images. This keeps things tidy and allows you to always know where to find your downloaded images.  
 As above for the cache, in HPC centres it would be best to avoid the home directory, and so I would recommend using `/group` at Pawsey:
 ```
 export SINGULARITY_PULLFOLDER="/group/<project>/<user>/.singularity/images"
 ```
 
 and `/short` at NCI:
-```
+```bash
 export SINGULARITY_PULLFOLDER="/short/<project>/<user>/.singularity/images"
 ```
 
@@ -81,7 +79,7 @@ export SINGULARITY_PULLFOLDER="/data/.singularity/images"
 
 You will need to ensure that the specified location for the image store actually exists (if not, create it with `mkdir` once and for all).
 
-Note that, once you have the store directory set up using this variable, and some pulled containers, you can execute them either with the standard notation:
+Note that, once you have the store directory set up using this variable, and some pulled containers, you can execute them either with the standard notation (for more discussion on this see [Embedding Singularity syntax to run containers](Running.md)):
 ```
 singularity exec docker://ubuntu:18.04 echo 'hello world'
 ```
