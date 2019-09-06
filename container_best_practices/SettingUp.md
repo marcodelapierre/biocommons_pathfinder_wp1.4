@@ -1,9 +1,9 @@
 [Back to Summary](README.md)
 
 
-## Setting up container images for your applications
+# Setting up container images for your applications
 
-### Paradigms for containerisation
+## Paradigms for containerisation
 
 You can think of two approaches here: one container per application, or one container with the full software stack required for a given workflow. Different people take different approaches in this regard. I will here outline arguments for using both, depending on the type of workflow you need to run.
 
@@ -20,7 +20,7 @@ You can think of two approaches here: one container per application, or one cont
    In this case the software stack is made up of a set of either Python or R libraries. In this case it can be definitely more convenient to make a single container with all the required packages for the given workflow. This will ensure consistency in dependencies versions across the various required packages.
 
 
-### Adopt, Adapt, Build
+## Adopt, Adapt, Build
 
 I find this approach to be quite well suited when seeking to move to containerised software.
 
@@ -44,7 +44,7 @@ I find this approach to be quite well suited when seeking to move to containeris
    Once you've picked a starting image, collect or work out the full set of commands required to install the package, and embed them into the container recipe file.
 
 
-### Tags and digests
+## Tags and digests
 
 **Tags** are a way to label different container images corresponding to the same repository (i.e. typically same application). As an example, in the image `ubuntu:18.04` the tag is `18.04`.  
 It's entirely up to who built the container to decide how to pick tags. Typically they include information on the software version (as in this Ubuntu example), but also on the build history of the container. E.g. the latest BLAST Biocontainers has tag `2.9.0--pl526h979a64d_3`. There can be several builds for the same version, to account for updated dependencies, or bug fixed in the container itself.  
@@ -57,7 +57,7 @@ ubuntu@sha256:d1d454df0f579c6be4d8161d227462d69e163a8ff9d20a847533989cf0c94d90
 ```
 
 
-### Building with Docker or Singularity?
+## Building with Docker or Singularity?
 
 This is a legitimate question even if you are using only Singularity to manage and run your containers. In fact, both choices come with pros and cons.  
 Using Singularity provides a consistent user experience across all the steps of container usage. Also, making a Singularity recipe file out of a bash script requires few modifications. Singularity has also a remote build feature, that allows to submit builds from an HPC cluster.  
@@ -65,7 +65,7 @@ On the other hand, Docker build is a multi step process that makes large use of 
 At present I have no final answer on which way is the best to go. On a Linux box (laptop, workstation, cloud) they can be installed together to coexist, so you might want to give both a try and find your preferred build approach.
 
 
-### Containers and reference databases
+## Containers and reference databases
 
 Reference databases in bioinformatics (and other domains) are often quite large in size (tens of GB if not more), and are updated frequently. For these reasons, it's not a good idea to package them in a container image with the corresponding application, as they would make them hard to transfer, and very much prone to become outdated.  
 It is much better to install ref. databases in the host machine, and then mount them at runtime to the container.

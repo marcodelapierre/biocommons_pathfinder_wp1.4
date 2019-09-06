@@ -1,20 +1,20 @@
 [Back to Summary](README.md)
 
 
-## Admin configuration for Singularity
+# Admin configuration for Singularity
 
 Configurations file for Singularity can be found under `<SINGULARITY_INSTALL_DIR>/etc/singularity/`, i.e. by default `/usr/local/etc/singularity/`. The main configuration file is `singularity.conf`, and most defaults seem to work fine in most cases.  
 The one setting update I recommend for admins is `mount home = no`, so that by default potentially sensitive information in the users homes in not available in containers. Users can still mount their home directory if they want (see directory mounting below).
 
 
-## User configuration for Singularity
+# User configuration for Singularity
 
 There are some useful Singularity behaviours that can be configured simply by setting environment variables. Note that in HPC centres system administrators might have already taken care of some of these settings.
 
 
-### Host directory mounting
+## Host directory mounting
 
-By default, Singularity only mounts (i.e. makes available) in the container the host current directory from where the singularity command is launched. This can be limiting every time you need to access files in other directories. You can mount additional directories at runtime with the `-B <dir1>,<dir2>,..` flag, but there's a handy variable for directories that you know you're always going to need.  
+By default, Singularity only mounts (i.e. makes available) in the container the host current directory from where the singularity command is launched. This can be limiting every time you need to access files in other directories. You can mount additional directories at runtime with the `-B <dir1>,<dir2>,..` flag, but there's a handy variable for directories that you know you're always going to need:  
 ```
 export SINGULARITY_BINDPATH=<dir1>,<dir2>,..
 ```
@@ -35,7 +35,7 @@ export SINGULARITY_BINDPATH="/data/work"
 ```
 
 
-### Cache location
+## Cache location
 
 When Singularity pulls/builds container images, it needs a cache to store intermediate components. By default, this cache is under the user home directory, `~/.singularity`. In contexts such as HPC centres use of home directories is often discouraged (with strict storage quotas in place), so it can be convenient to redefine this location, pointing to a volume where user quota is larger.
 
@@ -55,7 +55,7 @@ export SINGULARITY_CACHEDIR="/data/.singularity>"
 ```
 
 
-### Image store location
+## Image store location
 
 Singularity has two behaviours for storing container images.  
 When downloading an image right while running it (i.e. via `singularity exec` or `run`), the image will always be stored in the cache location.  
@@ -79,9 +79,9 @@ On the Cloud, similar to the discussion for cache, you might consider different 
 export SINGULARITY_PULLFOLDER="/data/.singularity/images"
 ```
 
-Note that you will need to ensure that the specified location for the image store actually exists (if not, create it with `mkdir` once and for all).
+You will need to ensure that the specified location for the image store actually exists (if not, create it with `mkdir` once and for all).
 
-Once you have the store directory set up using this variable, and some pulled containers, you can execute them either with the standard notation:
+Note that, once you have the store directory set up using this variable, and some pulled containers, you can execute them either with the standard notation:
 ```
 singularity exec docker://ubuntu:18.04 echo 'hello world'
 ```
@@ -91,7 +91,7 @@ singularity exec $SINGULARITY_PULLFOLDER/ubuntu_18.04.sif echo 'hello world'
 ```
 
 
-### Bash completion
+## Bash completion
 
 If you like to benefit from automatic `<Tab>` completion for Singularity commands and options, you need first to identify the installation directory for singularity, e.g.:
 ```
@@ -106,7 +106,7 @@ SINGULARITY_DIR="/usr/local"
 ```
 
 
-### Customise your .bash_profile
+## Customise your .bash_profile
 
 You can make all of the settings above available at shell login by adding the corresponding commands in your `~/.bash_profile`.  
 For instance, these are the recommended additions for Zeus at Pawsey:

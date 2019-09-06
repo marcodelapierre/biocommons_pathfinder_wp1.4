@@ -1,7 +1,7 @@
 # Best practices to deploy Singularity containers
 
-### BioCommons Pathfinder
-### by Marco De La Pierre, Pawsey Supercomputing Centre
+BioCommons Pathfinder  
+by Marco De La Pierre, Pawsey Supercomputing Centre
 
 
 ## Singularity version
@@ -12,10 +12,10 @@ All versions prior to 3.3.0 that I have tested (2.5.1, 3.0.1, 3.2.1) had bugs in
 I would kindly ask sites with older versions to proceed with an update.
 
 
-1. [User configuration for Singularity](Configuration.md)
+1. [Admin and user configurations for Singularity](Configuration.md)
 
 2. [Setting up container images for your applications](SettingUp.md)
 
 3. [Embedding Singularity syntax to run containers](Running.md)
 
-4. [Appendix: summary of basic Singularity commands](Appendix.md)
+4. [Appendix: Singularity quick reference](Appendix.md)
