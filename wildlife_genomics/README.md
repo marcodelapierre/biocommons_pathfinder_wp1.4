@@ -1,7 +1,7 @@
 # Wildlife Genomics project
 
 
-## Containerised software available so far
+## Containerised software
 
 The script `download-containers.sh` can be used to pull these containers locally, provided Singularity is available:
 ```bash
@@ -28,10 +28,15 @@ The script `download-containers.sh` can be used to pull these containers locally
       [Wrapper shell script](https://github.com/marcodelapierre/md-dockerfiles/blob/master/bio/juicer/juicer-singularity.sh)  
 
 
+## Data analysis workflows
+
+- [SIH Trinity assembly - optimised for Raijin](https://github.com/Sydney-Informatics-Hub/SIH-Raijin-Trinity)
+
+
 ## Portable data analysis workflows
 
 **work in progress**
 
-- SIH Trinity assembly pipeline
+- Trinity assembly - nf
 
 - Juicer (HiC assembly)
