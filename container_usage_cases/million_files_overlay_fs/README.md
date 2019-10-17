@@ -1,4 +1,4 @@
-# Handling large numbers of files using Singularity Overalay FS
+# Handling large numbers of files using Singularity Overlay FS
 
 ## Example of an Albacore basecalling run
 
