@@ -6,9 +6,9 @@
 * Singularity OverlayFS: 19 hours
 
 Scripts:
-* `prep.sh`: create the filesystem image
-* `job.sh`: SLURM submission script
-* `wrapped.sh`: wrapped script called by the SLURM script
+* [`prep.sh`](prep.sh): create the filesystem image
+* [`job.sh`](job.sh): SLURM submission script
+* [`wrapped.sh`](wrapped.sh): wrapped script called by the SLURM script
 
 The scripts assume the relevant paths are bind mounted by Singularity using the variable `SINGULARITY_BINDPATH` (comma-separated list of paths).
 
