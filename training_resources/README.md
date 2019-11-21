@@ -17,7 +17,9 @@
 - [Snakemake and Nextflow workshop by Nathan and Rad](https://github.com/UofABioinformaticsHub/embl-abr-snakemake-nextflow-workshop/blob/gh-pages/pdfs-latest/trainee_handout.pdf)
 
 ## Workflow engines - Nextflow
-- [Nextflow beginners course](https://nextflow-io.github.io/nf-hack18/training.html)
-- [Nextflow hands-on](https://nextflow-io.github.io/nf-hack18/handson.html)
+- [Nextflow workshop](https://nextflow-io.github.io/nf-hack18)
+  * [Nextflow beginners course](https://nextflow-io.github.io/nf-hack18/training.html)
+  * [Nextflow practical hands-on](https://nextflow-io.github.io/nf-hack18/handson.html)
+  * [Github with materials](https://github.com/nextflow-io/nf-hack18)
 - [Nextflow patterns](http://nextflow-io.github.io/patterns/index.html)
 - [Nextflow demos](https://github.com/stevekm/nextflow-demos)
