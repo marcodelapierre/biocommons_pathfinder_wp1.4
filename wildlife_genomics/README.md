@@ -22,11 +22,14 @@ The script `download-containers.sh` can be used to pull these containers locally
       [Container image](https://cloud.docker.com/u/marcodelapierre/repository/docker/marcodelapierre/supernova)  
       [Dockerfile](https://github.com/marcodelapierre/md-dockerfiles/blob/master/bio/supernova/Dockerfile)  
 
-    * Juicer - at the moment CPU only  
+    * Juicer - CPU version
       [Container image](https://cloud.docker.com/u/marcodelapierre/repository/docker/marcodelapierre/juicer)  
       [Dockerfile](https://github.com/marcodelapierre/md-dockerfiles/blob/master/bio/juicer/Dockerfile)  
       [Wrapper shell script](https://github.com/marcodelapierre/md-dockerfiles/blob/master/bio/juicer/juicer-singularity.sh)  
 
+    * Juicer - GPU version
+      [Container image](https://hub.docker.com/r/audreystott/juicer-gpu)  
+      [Dockerfile](https://github.com/audreystott/dockerfiles/blob/master/Dockerfile-juicer)  
 
 ## Data analysis workflows
 
